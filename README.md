@@ -1,12 +1,19 @@
-# claude-reflect
+# claude-reflect (fork)
 
-[![GitHub stars](https://img.shields.io/github/stars/BayramAnnakov/claude-reflect?style=flat-square)](https://github.com/BayramAnnakov/claude-reflect/stargazers)
-[![Version](https://img.shields.io/badge/version-2.6.0-blue?style=flat-square)](https://github.com/BayramAnnakov/claude-reflect/releases)
+> Forked from [BayramAnnakov/claude-reflect](https://github.com/BayramAnnakov/claude-reflect). This fork adds a routing manifest, `/retro` command, extra trigger words, and just-in-time knowledge routing.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-160%20passing-brightgreen?style=flat-square)](https://github.com/BayramAnnakov/claude-reflect/actions)
 [![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey?style=flat-square)](https://github.com/BayramAnnakov/claude-reflect#platform-support)
 
 A self-learning system for Claude Code that captures corrections and discovers workflow patterns — turning them into permanent memory and reusable skills.
+
+## What this fork adds
+
+- **`/retro` command** — enhanced version of `/reflect` with routing manifest support, semantic deduplication, and automatic manifest expansion
+- **Routing manifest** — a hand-curated map that tells /retro where each type of learning should go (CLAUDE.md, skill files, memory, etc.) instead of dumping everything in one file
+- **Extra trigger words** — casual correction patterns like "screwed up", "messed up", "hold up", "wait", "fucked up"
+- **Just-in-time knowledge** — learnings route to files that load on demand, not a catch-all that bloats every session
+- **Manifest expansion** — when a learning doesn't fit any existing route, /retro suggests adding a new entry to the manifest
 
 ## What it does
 
@@ -76,18 +83,12 @@ After installation, **restart Claude Code** (exit and reopen). Then hooks auto-c
 
 | Command | Description |
 |---------|-------------|
-| `/reflect` | Process queued learnings with human review |
-| `/reflect --scan-history` | Scan ALL past sessions for missed learnings |
-| `/reflect --dry-run` | Preview changes without applying |
-| `/reflect --targets` | Show detected config files (CLAUDE.md, AGENTS.md) |
-| `/reflect --review` | Show queue with confidence scores and decay status |
-| `/reflect --dedupe` | Find and consolidate similar entries in CLAUDE.md |
-| `/reflect --include-tool-errors` | Include tool execution errors in scan |
+| `/retro` | Process queued learnings with manifest-based routing |
+| `/retro --scan-history` | Scan ALL past sessions for missed learnings |
+| `/retro --scan-history --days N` | Limit scan to last N days (default: 30) |
+| `/retro --dedupe` | Find and consolidate similar entries across target files |
+| `/reflect` | Alias for `/retro` |
 | `/reflect-skills` | Discover skill candidates from repeating patterns |
-| `/reflect-skills --days N` | Analyze last N days (default: 14) |
-| `/reflect-skills --project <path>` | Analyze specific project |
-| `/reflect-skills --all-projects` | Scan all projects for cross-project patterns |
-| `/reflect-skills --dry-run` | Preview patterns without generating skill files |
 | `/skip-reflect` | Discard all queued learnings |
 | `/view-queue` | View pending learnings without processing |
 

@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 claude-reflect is a Claude Code plugin that implements a two-stage self-learning system:
 1. **Capture Stage** (automatic): Hooks detect correction patterns in user prompts and queue them
-2. **Process Stage** (manual): `/reflect` command processes queued learnings with human review and writes to CLAUDE.md files
+2. **Process Stage** (manual): `/retro` command processes queued learnings with manifest-based routing and human review
+
+This is a fork of [BayramAnnakov/claude-reflect](https://github.com/BayramAnnakov/claude-reflect) with added routing manifest support, `/retro` command, and extra trigger words.
 
 ## Architecture
 
@@ -16,7 +18,8 @@ hooks/hooks.json            → Hook definitions (PreCompact, PostToolUse)
 scripts/                    → Python scripts for hooks and extraction
 scripts/lib/                → Shared utilities (reflect_utils.py)
 scripts/legacy/             → Deprecated bash scripts (for reference)
-commands/*.md               → Skill definitions for /reflect, /reflect-skills, /skip-reflect, /view-queue
+commands/*.md               → Skill definitions for /retro, /reflect (alias), /reflect-skills, /skip-reflect, /view-queue
+examples/                   → Example routing manifest
 SKILL.md                    → Context provided when plugin is invoked
 tests/                      → Test suite (pytest)
 ```
@@ -24,7 +27,7 @@ tests/                      → Test suite (pytest)
 ### Data Flow
 
 1. User prompt → `capture_learning.py` (UserPromptSubmit hook) → `~/.claude/learnings-queue.json`
-2. `/reflect` command → reads queue + scans sessions → filters/dedupes → routes to memory targets
+2. `/retro` command → reads queue + scans sessions → filters/dedupes → routes via manifest to target files
 3. Session files live at `~/.claude/projects/[PROJECT_FOLDER]/*.jsonl`
 
 ### Memory Targets (Full Hierarchy)

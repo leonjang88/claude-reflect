@@ -5,6 +5,15 @@ All notable changes to claude-reflect will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Fork] - 2026-04-29
+
+### Added (Fork-specific)
+- **`/retro` command** — enhanced `/reflect` with routing manifest support, semantic deduplication, scan-history, and dedupe flags
+- **Routing manifest** — `.claude/reflect-manifest.md` maps learning categories to specific target files for just-in-time knowledge routing. See `examples/reflect-manifest.example.md`
+- **Automatic manifest expansion** — when a learning doesn't fit any existing route, `/retro` suggests adding a new manifest entry
+- **Extra trigger words** — `screwed up`, `messed up`, `broke my`, `ruined`, `hold up`, `wait`, `fuck up`, `fucked up`
+- **`/reflect` aliased to `/retro`** — one source of truth
+
 ## [3.1.0] - 2026-03-16
 
 ### Added
