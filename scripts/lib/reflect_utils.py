@@ -548,6 +548,10 @@ CORRECTION_PATTERNS = [
     (r"^I meant\b|^I said\b", "I-meant/said", True),  # Clarification
     (r"^I told you\b|^I already told\b", "I-told-you", True),  # Higher confidence
     (r"use .{1,30} not\b", "use-X-not-Y", True),  # "use X not Y" - limited gap
+    (r"screwed up|messed up", "screwed-up", True),  # Casual frustration
+    (r"broke my\b|ruined", "broke-ruined", True),  # Something went wrong
+    (r"^hold up\b|^wait\b", "hold-up", False),  # Interruption/correction
+    (r"fuck(?:ed)? up", "fucked-up", True),  # Expletive frustration
 ]
 
 # Guardrail patterns - "don't do X unless" constraints (highest confidence for corrections)
