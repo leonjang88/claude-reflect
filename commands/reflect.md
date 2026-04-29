@@ -540,7 +540,7 @@ Session files are JSONL. Use jq to extract user messages, then grep for patterns
 
 Generate appropriate patterns for the detected language and combine with English patterns.
 
-**Default English patterns:** `remember:`, `no, use`, `don't use`, `actually`, `stop using`, `never use`, `that's wrong`, `I meant`, `use X not Y`
+**Default English patterns:** `remember:`, `no, use`, `don't use`, `actually`, `stop using`, `never use`, `that's wrong`, `I meant`, `use X not Y`, `screwed up`, `messed up`, `broke my`, `ruined`, `hold up`, `wait`
 
 For each `.jsonl` file in the project folder, extract user messages that match correction patterns. Use your judgment on the best extraction method - you can use Read, Grep, Bash with jq, or any combination that works.
 
