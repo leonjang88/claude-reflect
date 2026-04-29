@@ -19,7 +19,7 @@ scripts/                    → Python scripts for hooks and extraction
 scripts/lib/                → Shared utilities (reflect_utils.py)
 scripts/legacy/             → Deprecated bash scripts (for reference)
 commands/*.md               → Skill definitions for /retro, /reflect (alias), /reflect-skills, /skip-reflect, /view-queue
-examples/                   → Example routing manifest
+.claude/reflect-manifest.example.md → Example routing manifest (copy to reflect-manifest.md to use)
 SKILL.md                    → Context provided when plugin is invoked
 tests/                      → Test suite (pytest)
 ```

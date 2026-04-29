@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added (Fork-specific)
 - **`/retro` command** — enhanced `/reflect` with routing manifest support, semantic deduplication, scan-history, and dedupe flags
-- **Routing manifest** — `.claude/reflect-manifest.md` maps learning categories to specific target files for just-in-time knowledge routing. See `examples/reflect-manifest.example.md`
+- **Routing manifest** — `.claude/reflect-manifest.md` maps learning categories to specific target files for just-in-time knowledge routing. See `.claude/reflect-manifest.example.md`
 - **Automatic manifest expansion** — when a learning doesn't fit any existing route, `/retro` suggests adding a new manifest entry
 - **Extra trigger words** — `screwed up`, `messed up`, `broke my`, `ruined`, `hold up`, `wait`, `fuck up`, `fucked up`
 - **`/reflect` aliased to `/retro`** — one source of truth

@@ -15,7 +15,7 @@ Scan this conversation for learnings, corrections, and new rules. Present each w
 
 ## Step 1: Read the Routing Manifest
 
-Read `.claude/reflect-manifest.md` (in this workspace) to understand all available target files and what kind of learnings route to each. See `examples/reflect-manifest.example.md` for the manifest format.
+Read `.claude/reflect-manifest.md` (in this workspace) to understand all available target files and what kind of learnings route to each. See `.claude/reflect-manifest.example.md` for the manifest format. Copy it to `.claude/reflect-manifest.md` and customize.
 
 If no manifest exists, fall back to routing everything to `./CLAUDE.md`.
 
