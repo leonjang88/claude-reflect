@@ -54,7 +54,7 @@ Scan past sessions for corrections missed by hooks. Useful for first-time setup 
 
 Session files are JSONL. Extract user messages matching correction patterns. Filter out `isMeta: true` messages (command expansions like /retro itself).
 
-**Default English patterns:** `remember:`, `no, use`, `don't use`, `actually`, `stop using`, `never use`, `that's wrong`, `I meant`, `use X not Y`, `screwed up`, `messed up`, `broke my`, `ruined`, `hold up`, `wait`
+**Default English patterns:** `remember:`, `no, use`, `don't use`, `actually`, `stop using`, `never use`, `that's wrong`, `I meant`, `use X not Y`, `screwed up`, `messed up`, `broke my`, `ruined`, `hold up`, `wait`, `fuck up`, `fucked up`
 
 Also extract **tool rejections** where `toolUseResult` contains "user said:" followed by feedback text. Skip empty rejections.
 
